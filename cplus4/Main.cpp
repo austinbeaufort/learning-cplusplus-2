@@ -1,32 +1,30 @@
-// cplus4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <string>
+#include "Account.h"
 
 using namespace std;
-
-// EXAMPLE 1 OOP
-class Account
-{
-private:
-    double balance;
-public:
-    void set_balance(double bal)
-    {
-        balance = bal;
-    }
-    double get_balance()
-    {
-        return balance;
-    }
-};
 
 
 int main()
 {
-    Account joe_account;
-    joe_account.set_balance(100);
-    cout << joe_account.get_balance() << endl;
+	//Account frank_account;
+	//frank_account.set_name("Frank's account.");
+	//frank_account.set_balance(1000);
+
+	//if (frank_account.deposit(200))
+	//	cout << "Deposit OK" << endl;
+	//else
+	//	cout << "Deposit not allowed" << endl;
+
+	//if (frank_account.withdraw(500))
+	//	cout << "Withdraw OK" << endl;
+	//else
+	//	cout << "Not sufficient funds" << endl;
+
+	//if (frank_account.withdraw(1500))
+	//	cout << "Withdraw OK" << endl;
+	//else
+	//	cout << "Not sufficient funds" << endl;
 }
 
 
