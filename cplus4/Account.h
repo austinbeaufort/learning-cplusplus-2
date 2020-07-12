@@ -6,6 +6,9 @@ private:
 	std::string name;
 	double balance;
 public:
+	// Overloaded Constructors
+
+	// methods declared inside the class
 	void set_balance(double bal) { balance = bal; }
 	double get_balance() { return balance; }
 
