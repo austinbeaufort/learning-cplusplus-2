@@ -3,8 +3,97 @@ PROJECT NOTES
 
 ****************** OOP ******************************
 
+&&&&&&&& EXAMPLE 3 &&&&&&&&&&&&&&&&
+
+
+
+
+
+
+
 &&&&&&&& EXAMPLE 2 &&&&&&&&&&&&&&&&
 
+#include <iostream>
+#include <string>
+#include "Account.h"
+
+using namespace std;
+
+class Account {
+private:
+	string name;
+	double balance;
+
+public:
+	// inline methods
+	void set_balance(double bal)
+	{
+		balance = bal;
+	}
+
+	double get_balance()
+	{
+		return balance;
+	}
+
+	// methods to be moved out of the class
+	void set_name(string new_name);
+	string get_name();
+
+	bool deposit(double amount);
+	bool withdraw(double amount);
+};
+
+void Account::set_name(string new_name)
+{
+	name = new_name;
+}
+
+string Account::get_name()
+{
+	return name;
+}
+
+bool Account::deposit(double amount)
+{
+	balance += amount;
+	return true;
+}
+
+bool Account::withdraw(double amount)
+{
+	if (balance - amount >= 0)
+	{
+		balance -= amount;
+		return true;
+	}
+	else
+		return false;
+}
+
+
+
+int main()
+{
+	Account frank_account;
+	frank_account.set_name("Frank's account.");
+	frank_account.set_balance(1000);
+
+	if (frank_account.deposit(200))
+		cout << "Deposit OK" << endl;
+	else
+		cout << "Deposit not allowed" << endl;
+
+	if (frank_account.withdraw(500))
+		cout << "Withdraw OK" << endl;
+	else
+		cout << "Not sufficient funds" << endl;
+
+	if (frank_account.withdraw(1500))
+		cout << "Withdraw OK" << endl;
+	else
+		cout << "Not sufficient funds" << endl;
+}
 
 
 
