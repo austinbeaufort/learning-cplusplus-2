@@ -3,10 +3,46 @@
 
 using namespace std;
 
+class Player
+{
+private:
+	string name;
+	int health;
+	int xp;
+public:
+	void set_name(string name_val) { name = name_val; }
+	// Overloaded Constructors
+	Player()
+	{
+		cout << "No args constructor called" << endl;
+	}
+	Player(string name)
+	{
+		cout << "String arg constructor called" << endl;
+	}
+	Player(string name, int health, int xp)
+	{
+		cout << "Three args constructor called" << endl;
+	}
+	~Player()
+	{
+		cout << "Destructor called for " << name << endl;
+	}
+};
+
 
 int main()
 {
+	Player elsa;
+	elsa.set_name("Elsa");
 
+	Player frank;
+	frank.set_name("Frank");
+	Player andrea("Andrea");
+	andrea.set_name("Andrea");
+	Player hero("Hero", 100, 12);
+	hero.set_name("Hero");
+	
 }
 
 
