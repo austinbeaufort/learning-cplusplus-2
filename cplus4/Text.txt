@@ -3,6 +3,169 @@ PROJECT NOTES
 
 ****************** OOP ******************************
 
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Player
+{
+private:
+	std::string name;
+	int health;
+	int xp;
+public:
+	void set_name(std::string name_val) { name = name_val; }
+	std::string get_name() { return name; }
+	// we provide default constructor. When we do not provide default constructor,
+	// then c++ will generate a default constructor for us.
+	Player()
+	{
+		name = "None";
+		health = 100;
+		xp = 3;
+	}
+	// Overloading the constructor
+	Player(std::string name_val, int health_val, int xp_val)
+	{
+		name = name_val;
+		health = health_val;
+		xp = xp_val;
+	}
+};
+
+int main()
+{
+	Player frank;
+	// prints "None"
+	cout << frank.get_name() << endl;
+	frank.set_name("Frank");
+	// prints "Frank"
+	cout << frank.get_name() << endl;
+
+	Player elsa{ "Elsa", 300, 27 };
+	cout << elsa.get_name() << endl;
+}
+
+
+
+
+
+
+
+
+
+&&&&&&&& EXAMPLE 6 &&&&&&&&&&&&&&&&
+
+class Account
+{
+private:
+	string name;
+	double balance;
+public:
+	// Constructor with Arguments
+	Account(std::string name_val, double bal)
+	{
+		name = name_val;
+		balance = bal;
+	}
+	bool withdraw(double amount);
+	bool deposit(double amount);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&&&&&&&& EXAMPLE 5 &&&&&&&&&&&&&&&&
+
+class Account
+{
+private:
+	string name;
+	double balance;
+public:
+	// user defined no-args constructor
+	Account()
+	{
+		name = "None";
+		balance = 0.0;
+	}
+};
+
+
+
+
+
+
+
+
+&&&&&&&& EXAMPLE 4 &&&&&&&&&&&&&&&&
+
+
+class Player
+{
+private:
+	string name;
+	int health;
+	int xp;
+public:
+	void set_name(string name_val) { name = name_val; }
+	// Overloaded Constructors
+	Player()
+	{
+		cout << "No args constructor called" << endl;
+	}
+	Player(string name)
+	{
+		cout << "String arg constructor called" << endl;
+	}
+	Player(string name, int health, int xp)
+	{
+		cout << "Three args constructor called" << endl;
+	}
+	~Player()
+	{
+		cout << "Destructor called for " << name << endl;
+	}
+};
+
+
+int main()
+{
+	Player elsa;
+	elsa.set_name("Elsa");
+
+	Player frank;
+	frank.set_name("Frank");
+	Player andrea("Andrea");
+	andrea.set_name("Andrea");
+	Player hero("Hero", 100, 12);
+	hero.set_name("Hero");
+	
+}
+
+
+
+
+
+
+
+
+
+
+
 &&&&&&&& EXAMPLE 3 &&&&&&&&&&&&&&&&
 
 

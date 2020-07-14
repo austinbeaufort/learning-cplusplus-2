@@ -6,43 +6,40 @@ using namespace std;
 class Player
 {
 private:
-	string name;
+	std::string name;
 	int health;
 	int xp;
 public:
-	void set_name(string name_val) { name = name_val; }
-	// Overloaded Constructors
+	void set_name(std::string name_val) { name = name_val; }
+	std::string get_name() { return name; }
+	// we provide default constructor. When we do not provide default constructor,
+	// then c++ will generate a default constructor for us.
 	Player()
 	{
-		cout << "No args constructor called" << endl;
+		name = "None";
+		health = 100;
+		xp = 3;
 	}
-	Player(string name)
+	// Overloading the constructor
+	Player(std::string name_val, int health_val, int xp_val)
 	{
-		cout << "String arg constructor called" << endl;
-	}
-	Player(string name, int health, int xp)
-	{
-		cout << "Three args constructor called" << endl;
-	}
-	~Player()
-	{
-		cout << "Destructor called for " << name << endl;
+		name = name_val;
+		health = health_val;
+		xp = xp_val;
 	}
 };
 
-
 int main()
 {
-	Player elsa;
-	elsa.set_name("Elsa");
-
 	Player frank;
+	// prints "None"
+	cout << frank.get_name() << endl;
 	frank.set_name("Frank");
-	Player andrea("Andrea");
-	andrea.set_name("Andrea");
-	Player hero("Hero", 100, 12);
-	hero.set_name("Hero");
-	
+	// prints "Frank"
+	cout << frank.get_name() << endl;
+
+	Player elsa{ "Elsa", 300, 27 };
+	cout << elsa.get_name() << endl;
 }
 
 
